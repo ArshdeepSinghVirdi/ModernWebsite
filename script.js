@@ -43,7 +43,7 @@ function updateActiveNavLink(sectionId) {
 }
 
 function updateActiveSectionOnScroll() {
-    const sections = ['home', 'about', 'game', 'contact'];
+    const sections = ['home', 'about', 'game'];
     const scrollPosition = window.scrollY + 100; 
     
     for (const sectionId of sections) {
@@ -201,121 +201,6 @@ class TicTacToeGame {
     }
 }
 
-class ContactForm {
-    constructor() {
-        this.form = document.getElementById('contactForm');
-        this.nameInput = document.getElementById('name');
-        this.emailInput = document.getElementById('email');
-        this.messageInput = document.getElementById('message');
-        this.successMessage = document.getElementById('formSuccess');
-        
-        this.init();
-    }
-    
-    init() {
-        this.form.addEventListener('submit', (e) => this.handleSubmit(e));
-        
-        // Clear errors on input
-        [this.nameInput, this.emailInput, this.messageInput].forEach(input => {
-            input.addEventListener('input', () => this.clearError(input));
-        });
-    }
-    
-    handleSubmit(e) {
-        e.preventDefault();
-        
-        // Clear previous errors
-        this.clearAllErrors();
-        
-        // Validate form
-        const isValid = this.validateForm();
-        
-        if (isValid) {
-            this.handleSuccess();
-        }
-    }
-    
-    validateForm() {
-        let isValid = true;
-        
-        // Validate name
-        if (!this.nameInput.value.trim()) {
-            this.showError(this.nameInput, 'nameError', 'Name is required');
-            isValid = false;
-        }
-        
-        // Validate email
-        const emailValue = this.emailInput.value.trim();
-        if (!emailValue) {
-            this.showError(this.emailInput, 'emailError', 'Email is required');
-            isValid = false;
-        } else if (!this.isValidEmail(emailValue)) {
-            this.showError(this.emailInput, 'emailError', 'Please enter a valid email');
-            isValid = false;
-        }
-        
-        // Validate message
-        const messageValue = this.messageInput.value.trim();
-        if (!messageValue) {
-            this.showError(this.messageInput, 'messageError', 'Message is required');
-            isValid = false;
-        } else if (messageValue.length < 10) {
-            this.showError(this.messageInput, 'messageError', 'Message must be at least 10 characters');
-            isValid = false;
-        }
-        
-        return isValid;
-    }
-    
-    isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-
-    showError(input, errorId, message) {
-        input.classList.add('error');
-        const errorElement = document.getElementById(errorId);
-        if (errorElement) {
-            errorElement.textContent = message;
-        }
-    }
-    
-    clearError(input) {
-        input.classList.remove('error');
-        const errorId = input.id + 'Error';
-        const errorElement = document.getElementById(errorId);
-        if (errorElement) {
-            errorElement.textContent = '';
-        }
-    }
-
-    clearAllErrors() {
-        [this.nameInput, this.emailInput, this.messageInput].forEach(input => {
-            this.clearError(input);
-        });
-    }
-
-    handleSuccess() {
-        // Show success message
-        this.successMessage.classList.remove('hidden');
-        
-        // Reset form
-        this.form.reset();
-        
-        // Hide success message after 3 seconds
-        setTimeout(() => {
-            this.successMessage.classList.add('hidden');
-        }, 3000);
-        
-        // Log form data (in a real app, this would send to a server)
-        console.log('Form submitted:', {
-            name: this.nameInput.value,
-            email: this.emailInput.value,
-            message: this.messageInput.value
-        });
-    }
-}
-
 // INITIALIZATION 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -324,9 +209,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize Tic-Tac-Toe game
     new TicTacToeGame();
-    
-    // Initialize contact form
-    new ContactForm();
     
     console.log('GameHub initialized successfully!');
 });

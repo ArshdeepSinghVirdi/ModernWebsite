@@ -82,10 +82,6 @@ body {
     padding: 0 var(--space-lg);
 }
 
-.hidden {
-    display: none !important;
-}
-
 /* HEADER & NAVIGATION */
 #header {
     position: fixed;
@@ -441,18 +437,6 @@ body {
     box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
 }
 
-.btn-secondary {
-    background-color: transparent;
-    color: #ffffff;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-}
-
-.btn-secondary:hover {
-    border-color: #60a5fa;
-    color: #60a5fa;
-    background-color: rgba(96, 165, 250, 0.1);
-}
-
 /* SECTION STYLES */
 .section-header {
     text-align: center;
@@ -711,140 +695,6 @@ body {
     margin-bottom: var(--space-xs);
 }
 
-/* CONTACT SECTION */
-.contact-section {
-    padding: var(--space-3xl) 0;
-    background-color: var(--bg-white);
-}
-
-.contact-container {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.contact-form {
-    background-color: var(--bg-light);
-    padding: var(--space-2xl);
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-lg);
-}
-
-/* Form Success Message */
-.form-success {
-    background-color: var(--success-light);
-    color: #166534;
-    padding: var(--space-md);
-    border-radius: var(--radius-md);
-    margin-bottom: var(--space-lg);
-    border: 1px solid #86efac;
-}
-
-/* Form Groups */
-.form-group {
-    margin-bottom: var(--space-lg);
-}
-
-.form-label {
-    display: block;
-    font-size: var(--font-size-sm);
-    font-weight: 500;
-    color: var(--text-primary);
-    margin-bottom: var(--space-sm);
-}
-
-.form-input,
-.form-textarea {
-    width: 100%;
-    padding: var(--space-md);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-lg);
-    font-size: var(--font-size-base);
-    font-family: inherit;
-    transition: all var(--transition-fast);
-    background-color: var(--bg-white);
-}
-
-.form-input:focus,
-.form-textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-}
-
-.form-input.error,
-.form-textarea.error {
-    border-color: var(--error-color);
-}
-
-.form-textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.error-message {
-    display: block;
-    color: var(--error-color);
-    font-size: var(--font-size-sm);
-    margin-top: var(--space-xs);
-}
-
-/* Submit Button */
-.submit-btn {
-    width: 100%;
-    padding: var(--space-md) var(--space-xl);
-    background-color: var(--primary-color);
-    color: var(--bg-white);
-    border: none;
-    border-radius: var(--radius-lg);
-    font-size: var(--font-size-base);
-    font-weight: 600;
-    cursor: pointer;
-    transition: all var(--transition-fast);
-}
-
-.submit-btn:hover {
-    background-color: var(--primary-hover);
-}
-
-/* Contact Info */
-.contact-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--space-xl);
-    margin-top: var(--space-3xl);
-    text-align: center;
-}
-
-.info-card {
-    padding: var(--space-lg);
-}
-
-.info-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: var(--radius-full);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto var(--space-md);
-}
-
-.info-icon svg {
-    width: 20px;
-    height: 20px;
-}
-
-.info-title {
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: var(--space-xs);
-}
-
-.info-text {
-    color: var(--text-secondary);
-    font-size: var(--font-size-sm);
-}
-
 /* FOOTER */
 .footer {
     background-color: var(--footer-bg);
@@ -1010,15 +860,9 @@ body {
         font-size: 2rem;
     }
     
-    /* Form */
-    .contact-form {
-        padding: var(--space-lg);
-    }
-    
     /* Sections */
     .about-section,
-    .game-section,
-    .contact-section {
+    .game-section {
         padding: var(--space-2xl) 0;
     }
 }
