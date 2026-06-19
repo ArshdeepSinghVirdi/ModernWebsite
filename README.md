@@ -30,3 +30,7 @@ This project is a frontend web application built for academic purposes. It demon
 
 1. Open the project folder (`ModernWebsite`).
 2. Open `index.html` in a web browser by clicking preview in VS code or right click and choose Open with live server.
+
+## Deployed URL:
+
+https://tic-tac-toe-modern.vercel.app/
